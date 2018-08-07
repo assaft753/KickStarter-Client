@@ -1,0 +1,143 @@
+page-sign {
+    ion-content{
+        margin: 0px;
+        padding: 0px;
+        background-color: #FAFAFA;
+    }
+    
+    #title{
+        font-size: 100px;
+        -webkit-margin-before: 0;
+        -webkit-margin-after: 0;
+    }
+    
+    #buttons{
+        position: absolute;
+        top: 3%;
+        right: 1%;
+    }
+
+
+    #header{
+        margin-left: 35%;
+        font-family: 'Ceviche One','Ariel';
+        color: rgba(225, 225, 225, .1);
+        background-image: url('../../assets/imgs/colors.jpg');
+        background-repeat: repeat-x;
+        -webkit-background-clip:text;
+        animation: animate 15s linear infinite;
+    }
+    
+    @keyframes animate{
+    
+        0%{
+            background-position: left 0px top 10px;
+        }
+        40%{
+            background-position: left 800px top 10px;
+        }
+    }
+    
+    #rights{
+         font-family: 'Ceviche One','serif';
+         font-size:20px;
+         font-weight: bold;
+         color: black;
+         margin-left: 36%;
+    }
+    
+    #box{
+        height: 200px;
+        width: 1000px;
+        background-color:#2D2D2D;
+        border-radius: 5px;
+        position: absolute;
+        top:55%;
+        left: 50%;
+        transform: translate(-50%,-40%);
+    }
+    #main{
+        height: 400px;
+        width: 450px;
+        background-color:   #FFEFD5;
+        border-radius: 5px;
+        position: absolute;
+        top:50%;
+        left: 70%;
+        transform: translate(-50%,-50%);
+        z-index: 99;
+    }
+    #loginform,#signupform{
+        position: absolute;
+        top:50%;
+        left: 70%;
+        transform: translate(-50%,-50%);
+        z-index: 999;
+    }
+    #signupform{
+        top:45%;
+        left: 75%;
+        visibility: hidden;
+    }
+    #loginform h1,#signupform h1{
+        font-family: arial;
+        font-size: 25px;
+        color:turquoise;
+    }
+    #loginform input,#signupform input{
+        height: 40px;
+        width: 300px;
+        border: 0px;
+        outline: none;
+        border-bottom: 1px solid black;
+        margin: 5px;
+    }
+    #loginform button,#signupform button{
+        height: 35px;
+        width: 130px;
+        background-color:turquoise;
+        font-family: monospace;
+        font-size: 16px;
+        color:white;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        margin-top: 30px;
+        margin-left: 175px;
+    }
+    #login_btn,#signup_btn{
+        height: 35px;
+        width: 120px;
+        background-color:transparent;
+        color:white;
+        border:1px solid white;
+        border-radius: 5px;
+        outline: none;
+        position: absolute;
+        left: 75%;
+        top:65%;
+        transform: translate(-50%,-50%);
+        transition: all .5s;
+    }
+    #signup_btn{
+        left: 25%;
+    }
+    #login_btn:hover,#signup_btn:hover{
+        background-color:white;
+        color:#2d2d2d;
+        cursor: pointer;
+    }
+    #login_msg,#signup_msg{
+        font-family: arial;
+        font-size: 25px;
+        color:white;
+        position: absolute;
+        top:35%;
+        left: 75%;
+        transform: translate(-50%,-50%);
+        z-index: 1;
+    }
+    #signup_msg{
+        left: 25%;
+    }
+}

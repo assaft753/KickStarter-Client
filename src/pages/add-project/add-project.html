@@ -1,0 +1,56 @@
+<ion-header>
+  <title> Kickstarter </title>
+  <link href='https://fonts.googleapis.com/css?family=Bungee Shade' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Ceviche One' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Baloo' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Cagliostro' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Codystar' rel='stylesheet'>
+</ion-header>
+
+
+<ion-content>
+  <div id="rights">
+    ©All Rights Reserved to Shir Licht & Assaf Tayouri
+  </div>
+  <div id="header">
+    <h1 id="title"> Kickstarter </h1>
+  </div>
+  <div padding id="formDiv">
+    <form id="usrform">
+      <div>
+        Project Name:
+        <input #project_name type="text" name="ProjectName">
+      </div>
+
+      <div>
+        <br> Project Idea:
+        <br>
+        <textarea #project_idea rows="4" cols="50" placeholder="Enter Project Idea" name="ProjectIdea" form="usrform"></textarea>
+      </div>
+      <div>
+        <br> Primary Image:
+        <input #priamry_image style="margin-bottom:6px" type="file" name="PrimaryImage" accept="image/*">
+        <br> More Images:
+        <input #secondary_images type="file" style="margin-bottom:6px" name="Images" multiple accept="image/*">
+        <br> Video:
+        <input #video type="file" style="margin-bottom:6px" name="Video">
+      </div>
+      <div>
+        <br> Description:
+        <br>
+        <textarea #description rows="4" cols="50" name="Description" placeholder="Enter Project Description" form="usrform"></textarea>
+      </div>
+      <br> Desire Amount:
+      <input #desire_amount style="margin-bottom:20px" type="number" name="DesireAmount">
+      <br> Days:
+      <input #days style="margin-bottom:20px" type="number" name="Days">
+      <br> Hours:
+      <input #hours style="margin-bottom:20px" type="number" name="Hours">
+      <br>
+    </form>
+    <div style="font-family: 'Baloo','serif';font-size:20px;font-weight: bold;">
+      <button (click)="submit()" id="sign_out" round ion-button>Submit</button>
+      <button (click)="goBack()" id="sign_out" round ion-button color="secondary">Cancel</button>
+    </div>
+  </div>
+</ion-content>

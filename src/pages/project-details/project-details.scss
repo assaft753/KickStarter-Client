@@ -1,0 +1,89 @@
+page-project-details {
+    ion-content{
+        background-color: #FAFAFA;
+          height:1000 px;
+          width: 100%;
+          position:relative;
+          text-align: center;
+          font-family: 'Condiment','Ariel';
+    }
+    
+    #title{
+        -webkit-margin-before: 0;
+        -webkit-margin-after: 0;
+        font-size: 100px;
+    }
+    
+    #header{
+        font-family: 'Ceviche One','Ariel';
+        font-size: 50px;
+        color: rgba(225, 225, 225, .1);
+        background-image: url("../../assets/imgs/colors.jpg");
+        background-repeat: repeat-x;
+        -webkit-background-clip:text;
+        animation: animate 15s linear infinite;
+    }
+    
+    @keyframes animate{
+    
+        0%{
+            background-position: left 0px top 10px;
+        }
+        40%{
+            background-position: left 800px top 10px;
+        }
+    }
+    
+    #rights{
+         font-family: 'Ceviche One','serif';
+         font-size:20px;
+         font-weight: bold;
+         color: black;
+    }
+    
+    #attributes_list{
+         font-family: 'Baloo','serif';
+         font-size:20px;
+         font-weight: bold;
+         color: #656969;
+         text-align: left;
+    }
+    
+    #primary_img{
+        object-fit: cover;
+        height: 450px;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    
+    #pname{
+        margin-top: 10%;
+        left:50%;
+        color:#009E74;
+        font-size:50px;
+        font-weight: bold;
+        transform: translate(-50%, -50%);
+        margin: 0;
+        padding: 0 20px;
+        text-shadow: 0 0 5px black;
+        position: absolute;
+    
+    }
+    
+    .btn{
+         font-family: 'Codystar','serif';
+         font-size:10px;
+         font-weight: bold;
+         color: #656969;
+         border: 5px solid #656969;
+         display: inline-block;
+         background: #FAFAFA;
+         letter-spacing: 0.1rem;
+    }
+    
+    #buttons{
+        margin-left: 5%;
+    }
+    
+    
+}

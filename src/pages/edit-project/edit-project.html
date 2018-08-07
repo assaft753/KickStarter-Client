@@ -1,0 +1,110 @@
+<ion-header>
+  <title> Kickstarter </title>
+  <link href='https://fonts.googleapis.com/css?family=Bungee Shade' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Ceviche One' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Baloo' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Cagliostro' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Codystar' rel='stylesheet'>
+</ion-header>
+
+
+<ion-content>
+  <div id="rights">
+    ©All Rights Reserved to Shir Licht & Assaf Tayouri
+  </div>
+
+  <div id="header">
+    <h1 id="title"> Kickstarter </h1>
+  </div>
+
+  <div padding id="formDiv">
+    <form id="usrform">
+
+      <div>
+        Project Name:
+        <input #project_name type="text" disabled name="ProjectName">
+      </div>
+
+      <div>
+        <br> Project Idea:
+        <br>
+        <textarea #project_idea rows="4" cols="50" placeholder="Enter Project Idea" name="ProjectIdea" form="usrform"></textarea>
+      </div>
+
+      <div>
+        <br> Primary Image:
+        <ion-input #priamry_image type="file" accept="image/*" (change)="primaryImageChanged($event)"></ion-input>
+        <br>
+        <img style="width:200px;height:200px;" src="{{primary_image_src}}">
+        <br> More Images:
+        <ion-input #secondary_images type="file" accept="image/*" (change)="secondaryImagesChanged($event)"></ion-input>
+        <br>
+
+        <div *ngIf="use_local_images==false">
+
+          <div *ngFor="let image of project.secondary_images;let i = index;">
+            <img style="width:200px;height:200px;" src="{{prefixUrlImage+image.image_name}}">
+          </div>
+
+        </div>
+
+        <div *ngIf="use_local_images==true">
+
+          <div *ngFor="let image of secondary_images_src;let i = index">
+            <img style="width:200px;height:200px;" src="{{image}}">
+            <button (click)="deleteFromLocal(i)" round ion-button color="danger">Delete</button>
+          </div>
+
+        </div>
+
+        <br> Video:
+        <ion-input type="file" (change)="videoChanged($event)"></ion-input>
+        <br>
+        <div *ngIf="video_file_src!=null">
+          <video #video style="width:680px;height:453px;" width="320" height="240" controls>
+            <source #source_video src="{{video_file_src}}" type="video/mp4"> Your browser does not support the video tag.
+          </video>
+          <button (click)="deleteVideo()" round ion-button color="danger">Delete</button>
+        </div>
+
+      </div>
+
+      <div>
+        <br> Description:
+        <br>
+        <textarea #description rows="4" cols="50" name="Description" placeholder="Enter Project Description" form="usrform"></textarea>
+      </div>
+
+      <br> Desire Amount:
+      <input #desire_amount style="margin-bottom:20px" type="number" name="DesireAmount">
+      <br> Days:
+      <input #days style="margin-bottom:20px" type="number" name="Days">
+      <br> Hours:
+      <input #hours style="margin-bottom:20px" type="number" name="Hours">
+      <br>
+
+      <div *ngIf="project.donators!=null && project.donators.length>0">
+
+        <h1 style="color:#009E74">Donators:</h1>
+
+        <div *ngFor="let donator of project.donators; let i = index">
+          <p>
+            <span style="color:#009E74">Name:</span> {{donator.name}}
+            <br>
+            <span style="color:#009E74">Donator Amount:</span> {{donator.amount}}
+            <br>
+            <button (click)="deleteDonator(i)" round ion-button color="danger">Delete</button>
+          </p>
+        </div>
+
+      </div>
+
+    </form>
+
+    <div style="font-family: 'Baloo','serif';font-size:20px;font-weight: bold;">
+      <button (click)="submit()" id="sign_out" round ion-button>Submit</button>
+      <button (click)="goBack()" id="sign_out" round ion-button color="secondary">Cancel</button>
+    </div>
+
+  </div>
+</ion-content>

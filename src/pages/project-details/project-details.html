@@ -1,0 +1,42 @@
+<ion-header>
+</ion-header>
+<title> Kickstarter </title>
+<link href='https://fonts.googleapis.com/css?family=Bungee Shade' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Ceviche One' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Baloo' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Cagliostro' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Codystar' rel='stylesheet'>
+
+<ion-content>
+  <div id="rights">
+    ©All Rights Reserved to Shir Licht & Assaf Tayouri
+  </div>
+  <div id="header">
+    <h1 id="title"> Kickstarter </h1>
+  </div>
+  <img src="{{prefixUrlImage+primary_image}}" id="primary_img">
+  <div padding id="attributes_list">
+    <h1 id="pname">{{project.project_name}}</h1>
+    <br>
+
+    <p align="center" style="font-size:18px;opacity:0.7">{{project.idea}}</p>
+    <p align="center" style="color:#282828">{{project.description}}</p>
+    <img *ngFor="let image of secondary_images" style="margin-left:10%;width:680px;height:453px;" src="{{prefixUrlImage+image.image_name}}">
+    <video *ngIf="video_name!=null && video_name!=''" style="margin-left:10%;width:680px;height:453px;" width="320" height="240"
+      controls>
+      <source src="{{prefixUrlVideo+video_name}}" type="video/mp4"> Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <div>
+    <a *ngIf="this.project.project_name == 'Flappy Birds'" href="http://localhost:5000" target="_blank" style="color:#009E74">
+      <span style="font-family:'Arial','serif';font-size:20px;font-weight: bold;text-decoration: underline;">Play Flappy Birds</span>
+    </a>
+  </div>
+  <div id="buttons" style="font-family: 'Baloo','serif';font-size:20px;font-weight: bold;margin-bottom:30px;margin-top:30px">
+    <button (click)="edit()" *ngIf="is_admin==1 || is_owner==true" ion-button round id="edit" color="secondary">Edit</button>
+    <button (click)="delete()" *ngIf="is_admin==1 || is_owner==true" ion-button round id="delete" color="danger">Delete</button>
+    <button (click)="donate()" *ngIf="is_donatble==true" ion-button round id="donate">Donate</button>
+    <button (click)="goBack()" ion-button round id="back" color="secondary">Back</button>
+  </div>
+</ion-content>

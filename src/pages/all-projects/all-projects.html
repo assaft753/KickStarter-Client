@@ -1,0 +1,46 @@
+<ion-header>
+  <title> Kickstarter </title>
+  <link href='https://fonts.googleapis.com/css?family=Bungee Shade' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Ceviche One' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Baloo' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Cagliostro' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Codystar' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Caveat Brush' rel='stylesheet'>
+</ion-header>
+
+<ion-content>
+  <div id="rights">
+    ©All Rights Reserved to Shir Licht & Assaf Tayouri
+  </div>
+  <div id="header">
+    <h1 id="title"> Kickstarter </h1>
+  </div>
+  <h1 style="font-family:'Ceviche One','Ariel';font-size:100px;color:#009E74;padding-right:10px;font-weight: bold;">All Projects</h1>
+
+  <a id="buttons" (click)="goBack()" style="color:#656969">
+    <span style="font-family:'Arial','serif';font-size:20px;padding-right:10px;font-weight: bold;text-decoration: underline;">Back</span>
+  </a>
+
+  <div id="projects_list">
+    <div *ngFor="let project of project_arr; let i = index" class="project" style="height:100%">
+      <img src="{{prefixUrlImage+project.primary_image}}" id="img">
+      <div padding>
+        <h1 id="pname">{{project.project_name}}</h1>
+        <p align="center" style="font-size:20px;height:100px">{{project.idea}}</p>
+        <p style="margin:0px;font-size:25px">Funded:
+          <span style="color:#009E74">{{precentage(i)}}%</span>
+        </p>
+        <p style="margin:0px;font-size:25px">Pledged:
+          <span style="color:#009E74">{{project.desire_amount}}$</span>
+        </p>
+        <p style="margin:0px;font-size:25px">Days To Go:
+          <span style="color:#009E74">{{project.days_to_go}}</span>
+        </p>
+        <p style="margin:0px;font-size:25px">Donators:
+          <span style="color:#009E74">{{project.donators.length}}</span>
+        </p>
+        <button ion-button (click)="goToProjectDetails(i)" round style="width:100%">Enter</button>
+      </div>
+    </div>
+  </div>
+</ion-content>

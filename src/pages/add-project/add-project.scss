@@ -1,0 +1,100 @@
+page-add-project {
+    ion-content{
+        background-color: #FAFAFA;
+          height:1000 px;
+          width: 100%;
+          position:relative;
+          text-align: center;
+          font-family: 'Condiment','Ariel';
+    }
+    
+    #title{
+        -webkit-margin-before: 0;
+        -webkit-margin-after: 0;
+        font-size: 100px;
+    }
+    
+    #header{
+        font-family: 'Ceviche One','Ariel';
+        font-size: 50px;
+        color: rgba(225, 225, 225, .1);
+        background-image: url("../../assets/imgs/colors.jpg");
+        background-repeat: repeat-x;
+        -webkit-background-clip:text;
+        animation: animate 15s linear infinite;
+    }
+    
+    @keyframes animate{
+    
+        0%{
+            background-position: left 0px top 10px;
+        }
+        40%{
+            background-position: left 800px top 10px;
+        }
+    }
+    
+    #rights{
+         font-family: 'Ceviche One','serif';
+         font-size:20px;
+         font-weight: bold;
+         color: black;
+    }
+    
+    #buttons{
+        position: absolute;
+        top: 3%;
+        right: 1%;
+    }
+    
+    .btn{
+         font-family: 'Codystar','serif';
+         font-size:10px;
+         font-weight: bold;
+         color: #656969;
+         border: 5px solid #656969;
+         display: inline-block;
+         background: #FAFAFA;
+         letter-spacing: 0.1rem;
+    }
+    
+    .bttn-green {
+        background-color: #009E74;
+        color: #FFFFFF !important;
+    }
+    
+    .bttn-medium {
+        height: 4.2rem;
+        line-height: 4.2rem;
+        padding: 0 1.8rem;
+        font-size: 1.4rem;
+    }
+    
+    .bttn {
+        font-weight: 500;
+        transition: all 0.25s ease-in-out !important;
+        text-align: center;
+        line-height: 1;
+        cursor: pointer;
+        background-color: #fff;
+        border: none;
+        position: relative;
+        display: inline-block;
+        -webkit-appearance: none;
+        border-radius: 0;
+    }
+    
+    
+    #usrform{
+        font-family: 'Baloo','serif';
+         font-size:20px;
+         font-weight: bold;
+         color: #656969;
+         padding-top: 20px;
+         text-align: left;
+    }
+    
+    #submit_btn{
+        margin-left: 40%;
+    }
+}

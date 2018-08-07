@@ -1,0 +1,52 @@
+<ion-header>
+
+    <title> Kickstarter </title>
+    <link href='https://fonts.googleapis.com/css?family=Bungee Shade' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Ceviche One' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Baloo' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Cagliostro' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Codystar' rel='stylesheet'>
+    <script src="jquery-1.10.2.min.js"></script>
+    <script src="JQUERYMain.js"></script>
+</ion-header>
+
+
+<ion-content>
+    <div id="rights">
+        ©All Rights Reserved to Shir Licht & Assaf Tayouri
+    </div>
+    <div id="header">
+        <h1 id="title"> Kickstarter </h1>
+    </div>
+
+    <div id="box">
+        <div id="main"></div>
+
+        <div id="loginform">
+            <h1>LOGIN</h1>
+            <input #login_email type="email" placeholder="User Name" />
+            <br>
+            <input #login_password type="password" placeholder="Password" />
+            <br>
+            <button (click)="checkUserInput(login_email,login_password,this.userProvider,this.navCtrl,this.signInUser)">LOGIN</button>
+        </div>
+
+        <div id="signupform">
+            <h1>SIGN UP</h1>
+            <input #signup_email type="email" placeholder="User Name" />
+            <br>
+            <input #signup_password type="password" placeholder="Password" />
+            <br>
+            <button (click)="checkUserInput(signup_email,signup_password,this.userProvider,this.navCtrl,this.signUpUser)">SIGN UP</button>
+        </div>
+
+        <div id="login_msg">Have an account?</div>
+        <div id="signup_msg">Don't have an account?</div>
+
+        <button (click)="signIn()" id="login_btn">LOGIN</button>
+        <button (click)="signUp()" id="signup_btn">SIGN UP</button>
+    </div>
+    <a id="buttons" style="color:#656969">
+        <span (click)="goBack()" style="font-family:'Arial','serif';font-size:20px;padding-right:10px;font-weight: bold;text-decoration: underline;">Back</span>
+    </a>
+</ion-content>
